@@ -2,7 +2,9 @@
 
 
 #include "TankPlayerController.h"
+#include "Tank.h"
 
+class ATank; //Forward declaration
 
 void ATankPlayerController::BeginPlay()
 {
