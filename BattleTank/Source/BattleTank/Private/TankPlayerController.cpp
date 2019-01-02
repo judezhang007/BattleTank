@@ -9,17 +9,6 @@ class ATank; //Forward declaration
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
-
-	auto ControlledTank = GetControlledTank();
-	if (ControlledTank != nullptr)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Tank: %s reporting to duty!"), *ControlledTank->GetName());
-	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("Tank not found!"));
-	}
-
 }
 
 ATank* ATankPlayerController::GetControlledTank() const
