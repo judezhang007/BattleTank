@@ -9,8 +9,7 @@
 #include "Engine/World.h"
 #include "TankAIController.generated.h"
 
-class ATank; //Forward declaration
-
+class UTankAimingComponent;
 
 /**
  * 
