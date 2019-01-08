@@ -6,6 +6,7 @@
 #include "Components/ActorComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "UObject/ConstructorHelpers.h"
 #include "TankAimingComponent.generated.h"
 
 //Enum for aiming state

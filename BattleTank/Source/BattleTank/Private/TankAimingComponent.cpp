@@ -13,8 +13,17 @@ UTankAimingComponent::UTankAimingComponent()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
 	// ...
+
+	//Workaround for the disappearing projectile BP. Setting the projectile BP for the aiming component manually. 
+	static ConstructorHelpers::FClassFinder<AProjectile> ProjectileClassAsset(TEXT("/Game/Tank/Projectile_BP"));
+	if (ProjectileClassAsset.Succeeded())
+	{
+		ProjectileBlueprint = ProjectileClassAsset.Class;
+	}
+	else {
+		UE_LOG(LogTemp, Warning, TEXT("Unable to create Projectile blue print. "))
+	}
 }
 
 void UTankAimingComponent::BeginPlay()
