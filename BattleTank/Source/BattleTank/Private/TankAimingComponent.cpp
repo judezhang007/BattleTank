@@ -16,7 +16,7 @@ UTankAimingComponent::UTankAimingComponent()
 	// ...
 
 	//Workaround for the disappearing projectile BP. Setting the projectile BP for the aiming component manually. 
-	static ConstructorHelpers::FClassFinder<AProjectile> ProjectileClassAsset(TEXT("/Game/Tank/Projectile_BP"));
+	static ConstructorHelpers::FClassFinder<AProjectile> ProjectileClassAsset(TEXT("/Game/Projectile/Projectile_BP"));
 	if (ProjectileClassAsset.Succeeded())
 	{
 		ProjectileBlueprint = ProjectileClassAsset.Class;
