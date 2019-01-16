@@ -31,6 +31,14 @@ void UTankAimingComponent::BeginPlay()
 	Super::BeginPlay();
 
 	LastFireTime = FPlatformTime::Seconds();
+
+	//make AI tank firing slower then player tank
+	auto bIsPlayerController = Cast<APawn>(GetOwner())->GetController()->IsPlayerController();
+	if (bIsPlayerController)
+	{
+		ReloadTimeInSeconds = 0.1;
+		RoundsLeft = 1000;
+	}
 }
 
 void UTankAimingComponent::Initialize(UTankBarrel* BarrelToSet, UTankTurret* TurretToSet)
